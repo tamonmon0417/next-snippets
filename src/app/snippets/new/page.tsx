@@ -1,5 +1,5 @@
 import { db } from '@/db'
-import { redirect } from 'next/navigation'
+import { notFound, redirect } from 'next/navigation'
 
 export default function SnippetCreatePage() {
   async function createSnippet(formData: FormData) {
@@ -16,9 +16,6 @@ export default function SnippetCreatePage() {
       },
     })
 
-    console.log(snippet)
-
-    // redirect(`/snippets/${snippet.id}`)
     redirect('/')
   }
 
